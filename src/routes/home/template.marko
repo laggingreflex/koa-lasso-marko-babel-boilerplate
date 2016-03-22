@@ -1,0 +1,17 @@
+layout-use('../layout.marko')
+  layout-put into='content'
+    if(!data.user)
+      h1 - Hello World!
+      a href='/login' - Please login
+    else
+      h1 - Hello, ${data.user.username}
+      .dynamic w-bind='./widget'
+        button w-onclick='onClick' - Load
+        .alert ng-if='!data' - Dynamic data not loaded
+        table ng-if='data'
+          tr
+            th - Key
+            th - Value
+          tr ng-repeat='(key, value) in data'
+            td - {{key}}
+            td - {{value}}

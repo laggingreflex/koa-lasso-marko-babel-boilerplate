@@ -1,0 +1,15 @@
+lasso-page package-path='./browser.json' timeout=60*1000
+html
+  head
+    title - ${data.title || 'Koa Lasso Marko Babel Boilerplate'}
+    layout-placeholder name='extra-header'
+    lasso-head
+  body ng-controller='app'
+    layout-placeholder name='content'
+    script(src='/app.js')
+    layout-placeholder name='footer'
+    layout-placeholder name='extra-footer'
+    lasso-body
+    browser-refresh enabled=true
+    async-fragments
+    init-widgets

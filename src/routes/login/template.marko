@@ -1,0 +1,12 @@
+layout-use('../layout.marko')
+  layout-put into='content'
+    .wrapper w-bind='./widget'
+      form class='login' method='post' action='/login' w-onSubmit='onSubmit'
+        p.title - Log in
+        input name='username' type='text' placeholder='username' autofocus
+        i.fa.fa-user
+        input name='password' type='text' placeholder='password'
+        i.fa.fa-key
+        button#login
+          i.spinner
+          span.state - Submit
